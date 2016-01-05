@@ -1,0 +1,18 @@
+.techlunch {
+	width: 50%;
+	margin: 0 auto;
+
+}
+
+.techlunch table {
+	width: 100%;
+}
+
+.techlunch table th{
+	text-align: center;
+}
+
+.entete {
+	 width:20%;
+	font-weight: bold;
+}
