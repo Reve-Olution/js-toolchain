@@ -18,7 +18,7 @@ gulp.task('clean', function() {
 
 /* Minify CSS, JS and replace links in index.html */
 gulp.task('usemin', ['clean'] ,function() {
-	return gulp.src(APP_DIR+'index.html')
+	return gulp.src(APP_DIR+'**/*.html')
 		.pipe(usemin({
 			css: [rev()],
 			js: [uglify(), rev()]
@@ -41,9 +41,14 @@ gulp.task('notify', function() {
 /* Start HTTP Server with livereload */
 gulp.task('serve', ['watch'] ,function() {
 	connect.server({
-		root: APP_DIR,
+		root: DIST_DIR,
 		livereload: true
 	})
+});
+
+gulp.task('copyViews', function() {
+   gulp.src(APP_DIR+'/views/**/')
+   .pipe(gulp.dest(DIST_DIR+'views'));
 });
 
 /* Build task */
