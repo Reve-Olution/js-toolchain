@@ -41,14 +41,9 @@ gulp.task('notify', function() {
 /* Start HTTP Server with livereload */
 gulp.task('serve', ['watch'] ,function() {
 	connect.server({
-		root: DIST_DIR,
+		root: APP_DIR,
 		livereload: true
 	})
-});
-
-gulp.task('copyViews', function() {
-   gulp.src(APP_DIR+'/views/**/')
-   .pipe(gulp.dest(DIST_DIR+'views'));
 });
 
 /* Build task */
