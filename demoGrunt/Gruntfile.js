@@ -53,9 +53,6 @@ module.exports = function(grunt) {
     },
 
     uglify: {
-      options: {
-        mangle: false
-      },
       dist : {},
       generated : {               
         files: {
@@ -105,11 +102,8 @@ module.exports = function(grunt) {
 
     // configure watch to auto update ----------------
     watch: {
-      
-      // for stylesheets, watch css and less files 
-      // only run less and cssmin stylesheets: { 
       files: ['styles/*.css'], 
-      tasks: ['build'],
+      tasks: ['useminPrepare','cssmin'],
       options: {
         cwd:'<%= config.app %>',
         livereload: true,
