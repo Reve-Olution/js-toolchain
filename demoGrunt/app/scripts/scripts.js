@@ -1,7 +1,7 @@
     var demoGruntApp = angular.module('demoGruntApp', ['ngRoute']);
 
     // configure our routes
-    demoGruntApp.config(function($routeProvider) {
+    demoGruntApp.config(["$routeProvider", function($routeProvider) {
         $routeProvider
 
             // route for the home page
@@ -25,18 +25,18 @@
 			.otherwise({
         		redirectTo: '/home'
       		});
-    });
+    }]);
 
     // create the controller and inject Angular's $scope
-    demoGruntApp.controller('mainController', function($scope) {
+    demoGruntApp.controller('mainController', ["$scope", function($scope) {
         // create a message to display in our view
         $scope.message = 'Bienvenue sur notre site !!';
-    });
+    }]);
 
-    demoGruntApp.controller('aboutController', function($scope) {
+    demoGruntApp.controller('aboutController', ["$scope", function($scope) {
         $scope.message = 'A propos de nous !';
-    });
+    }]);
 
-    demoGruntApp.controller('contactController', function($scope) {
+    demoGruntApp.controller('contactController', ["$scope", function($scope) {
         $scope.message = 'Envoyez nous un petit message ! :)';
-    });
+    }]);
